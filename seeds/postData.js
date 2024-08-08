@@ -1,28 +1,28 @@
-const { Gallery } = require('../models');
+const { Post } = require('../models');
 
-const gallerydata = [
+const postdata = [
   {
-    name: 'Printemps',
-    starting_date: 'April 20, 2021 07:00:00',
-    ending_date: 'June 21, 2021 17:00:00',
+    title: 'Printemps',
+    text: 'June 21, 2021 17:00:00',
+    user_id: 1,
   },
   {
-    name: 'Sommer',
-    starting_date: 'June 22, 2021 09:00:00',
-    ending_date: 'September 22, 2021 22:00:00',
+    title: 'Wow',
+    text: 'This is another post for the blog',
+    user_id: 2,
   },
   {
-    name: 'Herfst',
-    starting_date: 'September 23, 2021 08:30:00',
-    ending_date: 'December 21, 2021 20:30:00',
+    title: 'yet Another Post',
+    text: 'sorry these will all have the exact same post date lol oops',
+    user_id: 2,
   },
   {
-    name: 'Invierno',
-    starting_date: 'December 22, 2020 11:00:00',
-    ending_date: 'March 19, 2021 19:00:00',
+    title: 'PostyWosty',
+    text: 'what if i copied the script of the bee movie in here',
+    user_id: 3,
   },
 ];
 
-const seedGallery = () => Gallery.bulkCreate(gallerydata);
+const seedPost = () => Post.bulkCreate(postdata);
 
-module.exports = seedGallery;
+module.exports = seedPost;

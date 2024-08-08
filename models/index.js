@@ -16,9 +16,11 @@ Post.hasMany(Comment, {
   onDelete: 'CASCADE'
 });
 
-Comment.belongsTo(Post, {
-  foreignKey: 'post_id',
-});
+// Comment.belongsTo(Post, {
+//   foreignKey: 'post_id',
+// });
+
+//how do i get the eztra post_id to go away :( 
 
 
 module.exports = { User, Post, Comment };
