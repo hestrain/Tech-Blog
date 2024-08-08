@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Gallery, Painting } = require('../models');
+const { Post, User } = require('../models');
 
 // GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
-    const dbGalleryData = await Gallery.findAll({
+    const userPosts = await Post.findAll({
       include: [
         {
           model: Painting,

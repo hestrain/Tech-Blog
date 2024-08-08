@@ -1,13 +1,13 @@
 const router = require('express').Router();
 const { Post, Comment } = require('../models');
 
-// GET all galleries for homepage
+// GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
       include: [
         {
-          model: Painting,
+          model: Post,
           attributes: ['filename', 'description'],
         },
       ],
@@ -17,7 +17,7 @@ router.get('/', async (req, res) => {
       Post.get({ plain: true })
     );
     res.render('homepage', {
-      galleries,
+      posts,
       loggedIn: req.session.loggedIn,
     });
   } catch (err) {
@@ -32,12 +32,24 @@ router.get('/Post/:id', async (req, res) => {
     const dbPostData = await Post.findByPk(req.params.id, {
       include: [
         {
-          model: Painting,
+          model: Post,
           attributes: [
             'id',
             'title',
-            'date_created',
             'text',
+            'user_id',
+            'created_at',
+          ],
+        },
+      ],
+      include: [
+        {
+          model: Comment,
+          attributes: [
+            'id',
+            'text',
+            'user_id',
+            'created_at',
           ],
         },
       ],
