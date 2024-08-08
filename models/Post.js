@@ -11,18 +11,20 @@ Gallery.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    title: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    starting_date: {
+    date_created: {
       type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
-    ending_date: {
-      type: DataTypes.DATE,
+    text: {
+      type: DataTypes.TEXT,
       allowNull: false,
-    },
+
+    }
   },
   {
     sequelize,

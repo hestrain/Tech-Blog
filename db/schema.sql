@@ -1,3 +1,8 @@
-DROP DATABASE IF EXISTS museum_db;
+--drop database--
+DROP DATABASE IF EXISTS techblog_db;
 
-CREATE DATABASE museum_db;
+--create databse --
+CREATE DATABASE techblog_db;
+
+--use created database --
+\c techblog_db;

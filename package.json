@@ -1,15 +1,15 @@
 {
-  "name": "museum-paintings",
+  "name": "tech-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "its a blog to post about tech stuff",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
+    "start": "nodemon server.js",
     "start:dev": "nodemon server",
     "seed": "node seeds/index.js"
   },
-  "author": "",
+  "author": "hestrain",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -23,6 +23,9 @@
     "sequelize": "^6.33.0"
   },
   "devDependencies": {
+    "eslint": "^7.23.1",
+    "eslint-config-prettier":"6.15.0",
+    "prettier":"2.1.2",
     "nodemon": "^2.0.7"
   }
 }

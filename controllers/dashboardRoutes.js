@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Gallery, Painting } = require('../models');
 
-// GET all galleries for homepage
+// GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
     const dbGalleryData = await Gallery.findAll({
