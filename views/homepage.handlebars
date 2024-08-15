@@ -1,3 +1,12 @@
+<div class="post-zone">
 {{#each posts as |post|}}
-{{!-- {{> post_details}} --}}
+<div class="card">
+    <h3 class="card-header">{{post.title}}</h3>
+    <div class="card-body">
+    <p>{{post.text}}</p>
+    <h5>posted by {{post.user_id}}</h5>
+    <h6>on {{format_date post.createdAt}} at {{format_time post.createdAt}} </h6>
+    </div>
+</div>
 {{/each}}
+</div>

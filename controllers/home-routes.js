@@ -1,16 +1,10 @@
 const router = require('express').Router();
-const { Post, Comment } = require('../models');
+const { Post, Comment, User } = require('../models');
 
 // GET all posts for homepage
 router.get('/', async (req, res) => {
   try {
     const dbPostData = await Post.findAll({
-      include: [
-        {
-          model: Post,
-          attributes: ['filename', 'description'],
-        },
-      ],
     });
 
     const posts = dbPostData.map((Post) =>
@@ -55,8 +49,8 @@ router.get('/Post/:id', async (req, res) => {
       ],
     });
 
-    const Post = dbPostData.get({ plain: true });                                     
-    res.render('Post', { Post, loggedIn: req.session.loggedIn });
+    const post = dbPostData.get({ plain: true });                                     
+    res.render('post', { post, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
